@@ -95,6 +95,16 @@ function boldUnboldAxisLabel() {
 
             console.log(journalismdata);
 
+            journalismdata.forEach (row => {
+                row.id = +row.id;
+                row.poverty = +row.poverty;
+                row.healthcare = +row.healthcare;
+                row.age = +row.age;
+                row.income = +row.income;
+                row.obesity = +row.obesity;
+                row.smokes = +row.smokes;
+            })
+
 
         })
 
