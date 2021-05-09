@@ -35,3 +35,10 @@ function createAxisLabels() {
         .attr("id", "poverty")
         .attr("class", "axis_label x_axis_label text")
         .text("In Poverty (%)");
+
+    chartGroup.append("text")
+        .attr("transform", `translate(${chartWidth * 0.45}, ${chartHeight + chartMargin.top + 40})`)
+        .attr("id", "age")
+        .attr("class", "axis_label x_axis_label text")
+        .text("Age (Median)");
+    }
