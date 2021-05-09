@@ -50,7 +50,7 @@ function createAxisLabels() {
 
      chartGroup.append("text")
         .attr("transform", `translate(${chartMargin.left - 180}, ${chartHeight * 0.55}) rotate(270)`)
-        .attr("id", "income")
-        .attr("class", "axis_label x_axis_label text")
-        .text("Househole Income (Median)");
+        .attr("id", "smokes")
+        .attr("class", "axis_label y_axis_label text")
+        .text("Smokes (%)");
     }
