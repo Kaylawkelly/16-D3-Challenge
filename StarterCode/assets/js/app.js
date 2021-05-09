@@ -68,8 +68,15 @@ function createAxisLabels() {
         })
     }
 
-    function
+    function axisClickHandler
+    var selected_id= = d3
 
+    
+    
+    
+    
+    
+    
     makeResponsive();
 
     d3.select(window).on("resize", makeResponsive);
