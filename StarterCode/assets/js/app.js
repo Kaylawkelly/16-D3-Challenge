@@ -67,3 +67,9 @@ function createAxisLabels() {
             d3.select(`#${value}`).classed("axis_label_selected", true);
         })
     }
+
+    function
+
+    makeResponsive();
+
+    d3.select(window).on("resize", makeResponsive);
