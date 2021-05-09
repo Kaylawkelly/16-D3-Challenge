@@ -109,6 +109,9 @@ function boldUnboldAxisLabel() {
             var yList = journalismdata.map(row => row[axis_values.y]);
             var xDiff = d3.max(xList)- d3.min(xList);
             var yDiff = d3.max(yList)- d3.min(yList);
+            console.log(xList, yList);
+
+            
 
         })
 
