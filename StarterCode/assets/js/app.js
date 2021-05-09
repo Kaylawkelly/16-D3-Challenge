@@ -12,3 +12,10 @@ var xDefault = "poverty",
     yDefault = "obesity";
 var axis_values = { x: xDefault, y: yDefault };
 var svg, chartGroup;
+
+function makeResponsive() {
+    svgWidth = 800;
+    svgHeight = 600;
+    chartWidth = svgWidth - chartMargin.left - chartMargin.right;
+    chartHeight = svgHeight - chartMargin.top - chartMargin.bottom;
+    refreshChart();
