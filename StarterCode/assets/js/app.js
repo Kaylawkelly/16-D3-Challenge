@@ -53,4 +53,11 @@ function createAxisLabels() {
         .attr("id", "smokes")
         .attr("class", "axis_label y_axis_label text")
         .text("Smokes (%)");
+
+    chartGroup.append("text")
+        .attr("transform", `translate(${chartMargin.left - 140}, ${chartHeight * 0.63}) rotate(270)`)
+        .attr("id", "healthcare")
+        .attr("class", "axis_label y_axis_label text")
+        .text("Lacks Healthcare (%)");
+    d3.selectAll(".axis_label").on("click", axisClickHandler);
     }
