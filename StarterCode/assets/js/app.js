@@ -111,7 +111,23 @@ function boldUnboldAxisLabel() {
             var yDiff = d3.max(yList)- d3.min(yList);
             console.log(xList, yList);
 
+            var xLinearScale = d3.scaleLinear()
+                .domain([d3.min(xList)- xDiff *0.1, d3.max(xList)+ xDiff * 0.1])
+                .range([0,chartWidth]);
+            var yLinearScale = d3.scaleLinear()
+                .domain([d3.min(yList)- yDiff *0.1, d3.max(yList)+ yDiff * 0.1])
+                .range([chartHeight,0]);
+
+            var xBottomAxis = d3.axisBottom(xLinearScale)
+            var yLeftAxis = d3.axisLeft(yLinearScale)
             
+            chartGroup.append("g")
+                .attr("transform", `translate(0, ${chartHeight})`)
+                .call(xBottomAxis);
+            chartGroup.append("g")
+                .call(xLeftAxis);
+                  
+
 
         })
 
