@@ -125,7 +125,14 @@ function boldUnboldAxisLabel() {
                 .attr("transform", `translate(0, ${chartHeight})`)
                 .call(xBottomAxis);
             chartGroup.append("g")
-                .call(xLeftAxis);
+                .call(yLeftAxis);
+
+            
+            var toolTip = d3.tip().attr("class", "tooltip").offset([80,-60])
+            .html(d => `<strong>${(d.abbr)}</strong><br>${axis_values.x}: ${d[axis_values.x]} ${axis_values.y}: ${d[axis_values.y]}`);
+        svg.call(toolTip);
+
+
                   
 
 
