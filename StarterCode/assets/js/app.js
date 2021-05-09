@@ -43,13 +43,19 @@ function createAxisLabels() {
         .text("Age (Median)");
 
     chartGroup.append("text")
-        .attr("transform", `translate(${chartWidth * 0.40}, ${chartHeight + chartMargin.top + 60})`)
+        .attr("transform", `translate(${chartWidth * 0.4}, ${chartHeight + chartMargin.top + 60})`)
         .attr("id", "income")
         .attr("class", "axis_label x_axis_label text")
-        .text("Househole Income (Median)");
+        .text("Household Income (Median)");
 
-     chartGroup.append("text")
+    chartGroup.append("text")
         .attr("transform", `translate(${chartMargin.left - 180}, ${chartHeight * 0.55}) rotate(270)`)
+        .attr("id", "obesity")
+        .attr("class", "axis_label y_axis_label text")
+        .text("Obese (%)");
+
+    chartGroup.append("text")
+        .attr("transform", `translate(${chartMargin.left - 160}, ${chartHeight * 0.56}) rotate(270)`)
         .attr("id", "smokes")
         .attr("class", "axis_label y_axis_label text")
         .text("Smokes (%)");
@@ -60,14 +66,13 @@ function createAxisLabels() {
         .attr("class", "axis_label y_axis_label text")
         .text("Lacks Healthcare (%)");
     d3.selectAll(".axis_label").on("click", axisClickHandler);
-    }
+}
 
-    function boldUnboldAxisLabel() {
-        Object.entries(axis_values).forEach(([key, value]) => {
-            d3.select(`#${value}`).classed("axis_label_selected", true);
-        })
-    }
-
+function boldUnboldAxisLabel() {
+    Object.entries(axis_values).forEach(([key, value]) => {
+        d3.select(`#${value}`).classed("axis_label_selected", true);
+    })
+}
     function axisClickHandler() {
         var selected_id = d3.select(this).attr("id");
         console.log("selected_id=", selected_id);
