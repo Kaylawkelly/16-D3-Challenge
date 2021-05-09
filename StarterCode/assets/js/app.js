@@ -49,7 +49,7 @@ function createAxisLabels() {
         .text("Househole Income (Median)");
 
      chartGroup.append("text")
-        .attr("transform", `translate(${chartWidth * 0.45}, ${chartHeight + chartMargin.top + 60})`)
+        .attr("transform", `translate(${chartMargin.left - 180}, ${chartHeight * 0.55}) rotate(270)`)
         .attr("id", "income")
         .attr("class", "axis_label x_axis_label text")
         .text("Househole Income (Median)");
