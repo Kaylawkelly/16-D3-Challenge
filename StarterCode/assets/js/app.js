@@ -43,8 +43,14 @@ function createAxisLabels() {
         .text("Age (Median)");
 
     chartGroup.append("text")
+        .attr("transform", `translate(${chartWidth * 0.40}, ${chartHeight + chartMargin.top + 60})`)
+        .attr("id", "income")
+        .attr("class", "axis_label x_axis_label text")
+        .text("Househole Income (Median)");
+
+     chartGroup.append("text")
         .attr("transform", `translate(${chartWidth * 0.45}, ${chartHeight + chartMargin.top + 60})`)
         .attr("id", "income")
         .attr("class", "axis_label x_axis_label text")
-        .text("Age (Median)");
+        .text("Househole Income (Median)");
     }
