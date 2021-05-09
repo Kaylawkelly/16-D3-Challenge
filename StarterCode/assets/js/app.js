@@ -85,7 +85,20 @@ function boldUnboldAxisLabel() {
         d3.select("svg").remove();
         refreshChart();
     }
-    
+
+    function refreshChart (journalismdata){
+        createSVG();
+        createAxisLabels();
+        d3.csv("assets/data/data.csv").then(journalismdata => {
+
+            boldUnboldAxisLabel();
+
+            console.log(journalismdata);
+
+
+        })
+
+    }    
    
     
     
