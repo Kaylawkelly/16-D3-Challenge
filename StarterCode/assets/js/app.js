@@ -28,3 +28,10 @@ function createSVG() {
     chartGroup = svg.append("g")
         .attr("transform", `translate(${chartMargin.left}, ${chartMargin.top})`);
 }
+
+function createAxisLabels() {
+    chartGroup.append("text")
+        .attr("transform", `translate(${chartWidth * 0.45}, ${chartHeight + chartMargin.top + 20})`)
+        .attr("id", "poverty")
+        .attr("class", "axis_label x_axis_label text")
+        .text("In Poverty (%)");
