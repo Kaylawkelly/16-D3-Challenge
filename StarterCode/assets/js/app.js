@@ -61,3 +61,9 @@ function createAxisLabels() {
         .text("Lacks Healthcare (%)");
     d3.selectAll(".axis_label").on("click", axisClickHandler);
     }
+
+    function boldUnboldAxisLabel() {
+        Object.entries(axis_values).forEach(([key, value]) => {
+            d3.select(`#${value}`).classed("axis_label_selected", true);
+        })
+    }
