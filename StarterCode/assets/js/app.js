@@ -132,16 +132,39 @@ function boldUnboldAxisLabel() {
             .html(d => `<strong>${(d.abbr)}</strong><br>${axis_values.x}: ${d[axis_values.x]} ${axis_values.y}: ${d[axis_values.y]}`);
         svg.call(toolTip);
 
+        chartGroup.selectAll("circle").data(journalismData).enter().append("circle")
+            .attr("cx", d => xLinearScale(d[axis_values.x]))
+            .attr("cy", d => yLinearScale(d[axis_values.y]))
+            .attr("r", 12)
+            .attr("fill", "lightblue")
+            .attr("opacity", 0.7)
+            .on("mouseover", function(d) {
+                toolTip.show(d, this);
+            })
+            .on("mouseout", function(d) {
+                toolTip.hide(d);
+            });
 
-                  
+            chartGroup.append("g").selectAll("text").data(journalismData).enter().append("text")
+            .text(d => d.abbr)
+            .attr("x", d => xLinearScale(d[axis_values.x]))
+            .attr("y", d => yLinearScale(d[axis_values.y]) + 3)
+            .attr("text-anchor", "middle")
+            .attr("stroke", "white")
+            .attr("stroke-width", 1)
+            .attr("class", "state_label")
+            .on("mouseover", function(d) {
+                toolTip.show(d, this);
+            })
+            .on("mouseout", function(d) {
+                toolTip.hide(d);
+            });
 
 
-        })
+    }).catch(error => console.log(error));
+}
+makeResponsive();
 
-    }    
-   
-    
-    
-    
-    
+d3.select(window).on("resize", makeResponsive);
+ 
     
