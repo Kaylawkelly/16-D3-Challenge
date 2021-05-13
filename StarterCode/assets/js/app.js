@@ -149,7 +149,7 @@ function boldUnboldAxisLabel() {
                 .attr("x", d => xLinearScale(d[axis_values.x]))
                 .attr("y", d => yLinearScale(d[axis_values.y]) + 3)
                 .attr("text-anchor", "middle")
-                .attr("stroke", "black")
+                .attr("stroke", "grey")
                 .attr("stroke-width", 1)
                 .attr("class", "state_label")
                 .on("mouseover", function(d) {
